@@ -4,8 +4,8 @@ const getStudents = () => {
   return students;
 };
 
-const getStudent = (studentId: string) => {
-  return students.find((student) => student.id.toString() === studentId);
+const getStudent = (id: string) => {
+  return students.find((student) => student.id.toString() === id);
 };
 
 const createStudent = (name: string, firstname: string, age: number) => {
@@ -19,8 +19,8 @@ const createStudent = (name: string, firstname: string, age: number) => {
   return students;
 };
 
-const updateStudent = (studentId: string, body: Student) => {
-  const studentToUpdate = getStudent(studentId);
+const updateStudent = (id: string, body: Student) => {
+  const studentToUpdate = getStudent(id);
   if (studentToUpdate) {
     studentToUpdate.name = body.name;
     studentToUpdate.firstname = body.firstname;
@@ -29,9 +29,9 @@ const updateStudent = (studentId: string, body: Student) => {
   }
 };
 
-const deleteStudent = (studentId: string) => {
+const deleteStudent = (id: string) => {
   const index = students.findIndex(
-    (student) => student.id.toString() === studentId
+    (student) => student.id.toString() === id
   );
   students.splice(index, 1);
   return students;

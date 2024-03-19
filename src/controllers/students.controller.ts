@@ -6,8 +6,8 @@ export const getStudents = (req: any, res: any) => {
 };
 
 export const getStudent = (req: any, res: any) => {
-  const { studentId } = req.params;
-  const student = StudentsService.getStudent(studentId);
+  const { id } = req.params;
+  const student = StudentsService.getStudent(id);
   return res.status(200).json(student);
 };
 
@@ -18,13 +18,13 @@ export const createStudent = (req: any, res: any) => {
 };
 
 export const updateStudent = (req: any, res: any) => {
-  const { studentId } = req.params;
-  const studentUpdated = StudentsService.updateStudent(studentId, req.body);
+  const { id } = req.params;
+  const studentUpdated = StudentsService.updateStudent(id, req.body);
   return res.status(200).json(studentUpdated);
 };
 
 export const deleteStudent = (req: any, res: any) => {
-  const { studentId } = req.params;
-  const students = StudentsService.deleteStudent(studentId);
+  const { id } = req.params;
+  const students = StudentsService.deleteStudent(id);
   return res.status(200).json(students);
 };
