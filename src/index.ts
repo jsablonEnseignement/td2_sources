@@ -8,9 +8,7 @@ dotenv.config();
 const hostname = "127.0.0.1";
 const port = 5000;
 
-mongoose.connect(
-  `mongodb+srv://<username>:<password<domain>.mongodb.net<db_name>?retryWrites=true&w=majority`
-);
+mongoose.connect(`mongodb://localhost:27017/eilco_web`);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error: "));
