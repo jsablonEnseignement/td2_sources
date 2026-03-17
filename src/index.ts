@@ -1,9 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
-import dotenv from "dotenv";
 import { router } from "./routes/students.route";
-
-dotenv.config();
 
 const hostname = "127.0.0.1";
 const port = 5000;
